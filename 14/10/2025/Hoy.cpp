@@ -1,6 +1,41 @@
 #include <iostream>
 using namespace std;
 
+void checkPalindrome() {
+    string word1, word2;
+
+    cout << "Ingrese la primera palabra: ";
+    cin >> word1;
+
+    cout << "Ingrese la segunda palabra: ";
+    cin >> word2;
+
+    int i = 0;
+    bool pal1 = true;
+    while (i < word1.size() / 2) {
+        if (word1[i] != word1[word1.size() - 1 - i]) {
+            pal1 = false;
+            break;
+        }
+        i++;
+    }
+
+    i = 0;
+    bool pal2 = true;
+    while (i < word2.size() / 2) {
+        if (word2[i] != word2[word2.size() - 1 - i]) {
+            pal2 = false;
+            break;
+        }
+        i++;
+    }
+
+    cout << endl;
+    cout << "Primera palabra: " << (pal1 ? "Es palindromo" : "No es palindromo") << endl;
+    cout << "Segunda palabra: " << (pal2 ? "Es palindromo" : "No es palindromo") << endl;
+}
+
+
 
 void letterInCommon(){
     string word1, word2;
@@ -37,7 +72,7 @@ void keepOnlyConsonants() {
     for (size_t i = 0; i < originalString.size(); i++) {
         char letter = originalString[i];
 
-        char lower = tolower(letter);
+        char lower = (letter);
 
         if (lower != 'a' && lower != 'e' && lower != 'i' && lower != 'o' && lower != 'u') {
             newString += letter;
@@ -74,6 +109,6 @@ void alternateCaseWithASCII() {
 }
 
 int main() {
-    letterInCommon();
+    checkPalindrome();
     return 0;
 }
