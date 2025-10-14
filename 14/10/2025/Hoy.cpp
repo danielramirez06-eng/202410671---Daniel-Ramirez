@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+
+
+
+//5
+
 void checkPalindrome() {
     string word1, word2;
 
@@ -36,7 +41,7 @@ void checkPalindrome() {
 }
 
 
-
+//3
 void letterInCommon(){
     string word1, word2;
 
@@ -63,6 +68,7 @@ void letterInCommon(){
     cout << "Letras en comun: " << contador << endl;
 }
 
+//1
 void keepOnlyConsonants() {
     string originalString, newString = "";
 
@@ -82,7 +88,7 @@ void keepOnlyConsonants() {
     cout << "Nuevo: " << newString << endl;
 }
 
-
+//2
 void alternateCaseWithASCII() {
     string originalString, newString = "";
 
