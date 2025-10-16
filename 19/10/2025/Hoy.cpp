@@ -4,19 +4,19 @@ using namespace std;
 
 
 //SEÑALEEEES
-void validadorSenal(){
+void validadorSeñal(){
 
-    string senal, palabra;
+    string señal, palabra;
     int guiones = 0, puntos = 0;
 
     cout << "Ingrese la senal de radio (solo '-' y '.'): ";
-    cin >> senal;
+    cin >> señal;
 
-    for(int i = 0; i < senal.length(); i++){
-        if(senal[i] == '-'){
+    for(int i = 0; i < señal.size(); i++){
+        if(señal[i] == '-'){
             guiones++;
         }
-        else if(senal[i] == '.'){
+        else if(señal[i] == '.'){
             puntos++;
         }
     }
@@ -35,7 +35,7 @@ void validadorSenal(){
 
     string nueva = palabra;
 
-    for(int i = 0; i < palabra.length(); i++){
+    for(int i = 0; i < palabra.size(); i++){
         char c = palabra[i];
 
         if(c >= 97 && c <= 122){ 
@@ -125,7 +125,7 @@ void contraseñas() {
 int main() {
     
     //contraseñas();
-    validadorSenal();
+    validadorSeñal();
 
     return 0;
 }
