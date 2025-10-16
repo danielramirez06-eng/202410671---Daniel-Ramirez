@@ -3,6 +3,62 @@
 using namespace std;
 
 
+//SEÑALEEEES
+void validadorSenal(){
+
+    string senal, palabra;
+    int guiones = 0, puntos = 0;
+
+    cout << "Ingrese la senal de radio (solo '-' y '.'): ";
+    cin >> senal;
+
+    for(int i = 0; i < senal.length(); i++){
+        if(senal[i] == '-'){
+            guiones++;
+        }
+        else if(senal[i] == '.'){
+            puntos++;
+        }
+    }
+
+    float promedio = 0;
+    if(puntos != 0){
+        promedio = (float)guiones / puntos;
+    }
+
+    cout << "\nSeñales positivas (-): " << guiones << endl;
+    cout << "Señales negativas (.): " << puntos << endl;
+    cout << "Promedio (+ / -): " << promedio << endl;
+
+    cout << "\nIngrese una palabra sin espacios: ";
+    cin >> palabra;
+
+    string nueva = palabra;
+
+    for(int i = 0; i < palabra.length(); i++){
+        char c = palabra[i];
+
+        if(c >= 97 && c <= 122){ 
+            if(i % 2 == 0){
+                nueva[i] = c - 32;  
+            }else{
+                nueva[i] = c;
+            }
+        }
+        else if(c >= 65 && c <= 90){ 
+            if(i % 2 != 0){
+                nueva[i] = c + 32;  
+            }else{
+                nueva[i] = c;
+            }
+        }
+    }
+
+    cout << "\nPalabra modificada: " << nueva << endl;
+}
+
+
+
 
 //CONTRASEÑAAAAA
 
@@ -68,7 +124,8 @@ void contraseñas() {
 
 int main() {
     
-    contraseñas();
+    //contraseñas();
+    validadorSenal();
 
     return 0;
 }
