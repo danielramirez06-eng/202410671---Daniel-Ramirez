@@ -1,37 +1,37 @@
 #include <iostream>
 using namespace std;
 
-string palabraMasLarga(string frase, int &cantidad);
+string LongestWord(string phrase, int &amount);
 
 void hd() {
-    string frase;
+    string phrase;
     cout << "Ingresa una frase: ";
-    getline(cin, frase);
+    getline(cin, phrase);
 
-    int cantidad = 0;
-    string masLarga = palabraMasLarga(frase, cantidad);
+    int amount = 0;
+    string longer = LongestWord(phrase, amount);
 
     cout << endl;
-    cout << "Cantidad de palabras: " << cantidad << endl;
-    cout << "Palabra mas larga: " << masLarga << endl;
+    cout << "Cantidad de palabras: " << amount << endl;
+    cout << "Palabra mas larga: " << longer << endl;
 }
 
-string palabraMasLarga(string frase, int &cantidad) {
-    string palabra = "", masLarga = "";
+string LongestWord(string phrase, int &amount) {
+    string word = "", longer = "";
 
-    for (int i = 0; i <= frase.size(); i++) {
-        if (frase[i] != ' ' && frase[i] != '\0') {
-            palabra += frase[i];
-        } else if (palabra != "") {
-            cantidad++;
-            if (palabra.size() > masLarga.size()) {
-                masLarga = palabra;
+    for (int i = 0; i <= phrase.size(); i++) {
+        if (phrase[i] != ' ' && phrase[i] != '\0') {
+            word += phrase[i];
+        } else if (word != "") {
+            amount++;
+            if (word.size() > longer.size()) {
+                longer = word;
             }
-            palabra = "";
+            word = "";
         }
     }
 
-    return masLarga;
+    return longer;
 }
 
 int main() {
