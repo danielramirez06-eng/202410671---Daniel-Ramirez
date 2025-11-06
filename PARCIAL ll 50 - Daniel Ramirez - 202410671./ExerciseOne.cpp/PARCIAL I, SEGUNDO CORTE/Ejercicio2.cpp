@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void temperatura() {
+void temperature() {
 
     float tempMin, tempMax;
     cout << "Ingresa tu temperatura minima: ";
@@ -40,6 +40,6 @@ void temperatura() {
 }
 
 int main() {
-    temperatura();
+    temperature();
     return 0;
 }
