@@ -2,6 +2,7 @@
 using namespace std;
 
 void temperatura() {
+
     float tempMin, tempMax;
     cout << "Ingresa tu temperatura minima: ";
     cin >> tempMin;
@@ -16,6 +17,29 @@ void temperatura() {
 
     int tam = sizeof(temperatures) / sizeof(float);
 
+    float sum = 0;
+    int counter = 0;
+
+    cout << endl;
+    cout << "Ciudades dentro del rango (" << tempMin << " - " << tempMax << " °C):" << endl;
+
+    for (int i = 0; i < tam; i++) {
+        if (temperatures[i] >= tempMin && temperatures[i] <= tempMax) {
+            cout << citys[i] << " - " << temperatures[i] << " °C" << endl;
+            sum += temperatures[i];
+            counter++;
+        }
+    }
+
+    if (counter > 0) {
+        float average = sum / counter;
+        cout << "Promedio de temperaturas dentro del rango: " << average << " °C" << endl;
+    } else {
+        cout << "No hay ciudades dentro de ese rango de temperatura." << endl;
+    }
 }
 
-   
+int main() {
+    temperatura();
+    return 0;
+}
